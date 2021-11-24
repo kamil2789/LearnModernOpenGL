@@ -13,9 +13,10 @@ add_executable(${PROJECT_NAME}
 )
 
 add_dependencies(${PROJECT_NAME} gtest)
+add_dependencies(${PROJECT_NAME} gmock)
 
-target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/build/lib/Debug/gtest.lib)
-target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/build/lib/Debug/gmock.lib)
+target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/build/lib/Debug/gtestd.lib)
+target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/build/lib/Debug/gmockd.lib)
 
 target_include_directories(${PROJECT_NAME} PUBLIC 
     ${CMAKE_SOURCE_DIR}/Externals/googletest/googletest/include
