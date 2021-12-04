@@ -7,9 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(${PROJECT_NAME} 
     src/main.cpp
-    src/exampleTest.cpp
+    src/ShaderFileReaderTest.cpp
     #FrameworkOpenGL project
-    #${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ShaderFileReader.cpp
 )
 
 add_dependencies(${PROJECT_NAME} gtest)

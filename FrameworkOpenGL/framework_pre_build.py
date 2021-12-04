@@ -1,6 +1,8 @@
 import os
 import shutil
 from pathlib import Path
+from termcolor import colored
+
 
 BUILD_DIR = Path(os.getcwd()).parent.resolve()
 RESULT_PATH = BUILD_DIR / "Result"
@@ -26,6 +28,7 @@ def copy_glfw_libs():
 def main():
     prepare_empty_build_result_dir()
     copy_glfw_libs()
+    print(colored("Result folder has been prepared", "green"))
 
 
 main()

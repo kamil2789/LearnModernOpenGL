@@ -10,6 +10,7 @@ add_executable(${PROJECT_NAME}
     src/GlfwConfig.cpp
     src/GlfwWindowManager.cpp
     src/GladConfig.cpp
+    src/ShaderFileReader.cpp
     ${CMAKE_SOURCE_DIR}/Externals/glad/src/glad.c
 )
 
