@@ -21,6 +21,7 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GlfwConfig.cpp
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ColoredTriangle.cpp
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/TexturedReactangle.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/TextureObject.cpp
     #External
     ${CMAKE_SOURCE_DIR}/Externals/glad/src/glad.c
 )
