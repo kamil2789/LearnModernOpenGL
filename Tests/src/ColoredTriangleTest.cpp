@@ -8,14 +8,14 @@
 #include "GladConfig.h"
 #include "ShaderFileReader.h"
 #include "ShaderProgram.h"
-#include "Triangle.h"
+#include "ColoredTriangle.h"
 
-bool EndToEndTest::GradientTriangleWithUniformTest()
+bool EndToEndTest::ColoredTriangleTest()
 {
     GlfwConfig glfwConfig{};
     glfwConfig.setDefaultWindowOptions();
 
-    GlfwWindowManager windowManager{800, 600, "GradientTriangleWithUniformTest"};
+    GlfwWindowManager windowManager{800, 600, "ColoredTriangle"};
     windowManager.setContextCurrent();
 
     GladConfig gladConfig{};
@@ -23,20 +23,20 @@ bool EndToEndTest::GradientTriangleWithUniformTest()
     glViewport(0, 0, 800, 600);
 
     ShaderProgram simpleTriangleShader{
-        ShaderFileReader::readSrcFromFile("simplestVertex.vert"),
-        ShaderFileReader::readSrcFromFile("uniformFragment.frag")
+        ShaderFileReader::readSrcFromFile("colorVertex.vert"),
+        ShaderFileReader::readSrcFromFile("colorFragment.frag")
     };
 
     simpleTriangleShader.compile();
     simpleTriangleShader.run();
 
-    std::array<float, 9> vertices = {
-        -0.5f, -0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        0.0f, 0.5f, 0.0f,
+    std::array<float, 18> vertices = {
+        0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
+        -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
+        0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f
     };
 
-    Triangle triangle{vertices};
+    ColoredTriangle triangle{vertices};
     triangle.init();
 
     glClearColor(0.2f, 0.3f, 0.0f, 1.0f);
@@ -47,10 +47,6 @@ bool EndToEndTest::GradientTriangleWithUniformTest()
         //rendering
         glClear(GL_COLOR_BUFFER_BIT);
 
-        float timeValue = glfwGetTime();
-        float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
-
-        simpleTriangleShader.setUniformVariable("ActualColor", greenValue);
         triangle.draw();
 
         //rendering end

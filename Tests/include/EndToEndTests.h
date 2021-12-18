@@ -3,4 +3,5 @@
 namespace EndToEndTest
 {
     bool GradientTriangleWithUniformTest();
+    bool ColoredTriangleTest();
 }

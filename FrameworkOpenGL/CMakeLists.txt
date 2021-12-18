@@ -13,6 +13,7 @@ add_executable(${PROJECT_NAME}
     src/ShaderFileReader.cpp
     src/ShaderProgram.cpp
     src/Triangle.cpp
+    src/ColoredTriangle.cpp
     ${CMAKE_SOURCE_DIR}/Externals/glad/src/glad.c
 )
 

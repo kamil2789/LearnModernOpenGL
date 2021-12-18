@@ -4,11 +4,11 @@
 
 /* Prototype, temporary class */
 
-class Triangle : public ISolidObject
+class ColoredTriangle : public ISolidObject
 {
 public:
-    Triangle(const std::array<float, 9>& vertices);
-    ~Triangle();
+    ColoredTriangle(const std::array<float, 18>& vertices);
+    ~ColoredTriangle() override;
 
     void init() override;
     void draw() override;
@@ -16,5 +16,5 @@ public:
 private:
     unsigned int VBO;
     unsigned int VAO;
-    std::array<float, 9> vertices;
+    std::array<float, 18> vertices;
 };

@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME}
     src/main.cpp
     src/ShaderFileReaderTest.cpp
     src/GradientTriangleWithUniformTest.cpp
+    src/ColoredTriangleTest.cpp
     src/EndToEnd.cpp
     #FrameworkOpenGL project
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ShaderFileReader.cpp
@@ -17,6 +18,7 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Triangle.cpp
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GlfwWindowManager.cpp
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GlfwConfig.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ColoredTriangle.cpp
     #External
     ${CMAKE_SOURCE_DIR}/Externals/glad/src/glad.c
 )
