@@ -35,6 +35,17 @@ void ShaderProgram::setFragmentSrc(const std::string& fragmentSrc)
     this->fragmentSrc = fragmentSrc;
 }
 
+void ShaderProgram::setUniformVariable(const std::string& varName, float value) const
+{
+    auto vertexColorLocation = glGetUniformLocation(shaderProgramID, varName.c_str());
+    if (vertexColorLocation == -1)
+    {
+        throw std::invalid_argument{"Provided uniform variable does not exist " + varName};
+    }
+
+    glUniform1f(vertexColorLocation, value);
+}
+
 unsigned int ShaderProgram::getID() const
 {
     return shaderProgramID;

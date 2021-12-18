@@ -12,6 +12,7 @@ public:
 
     void setVertexSrc(const std::string& vertexSrc);
     void setFragmentSrc(const std::string& fragmentSrc);
+    void setUniformVariable(const std::string& varName, float value) const;
     unsigned int getID() const;
 
     void compile();

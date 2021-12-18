@@ -1,5 +1,4 @@
-#include <iostream>
-#include <array>
+#include "EndToEndTests.h"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -11,12 +10,12 @@
 #include "ShaderProgram.h"
 #include "Triangle.h"
 
-int main()
+bool EndToEndTest::GradientTriangleWithUniformTest()
 {
     GlfwConfig glfwConfig{};
     glfwConfig.setDefaultWindowOptions();
 
-    GlfwWindowManager windowManager{800, 600, "LearnOpenGL"};
+    GlfwWindowManager windowManager{800, 600, "GradientTriangleWithUniformTest"};
     windowManager.setContextCurrent();
 
     GladConfig gladConfig{};
@@ -25,10 +24,11 @@ int main()
 
     ShaderProgram simpleTriangleShader{
         ShaderFileReader::readSrcFromFile("simplestVertex.vert"),
-        ShaderFileReader::readSrcFromFile("simplestFragment.frag")
+        ShaderFileReader::readSrcFromFile("uniformFragment.frag")
     };
 
     simpleTriangleShader.compile();
+    simpleTriangleShader.run();
 
     std::array<float, 9> vertices = {
         -0.5f, -0.5f, 0.0f,
@@ -36,56 +36,29 @@ int main()
         0.0f, 0.5f, 0.0f,
     };
 
-    std::array<float, 9> vertices2 = {
-        -0.9f, -0.9f, 0.0f,
-        0.0f, -0.9f, 0.0f,
-        -0.5f, -0.6f, 0.0f
-    };
-
     Triangle triangle{vertices};
     triangle.init();
 
-    Triangle triangle2{vertices2};
-    triangle2.init();
+    glClearColor(0.2f, 0.3f, 0.0f, 1.0f);
 
-    auto actualColor = 0.0f;
-    bool isUp = true;
-    auto ratio = 0.005f;
+    //ADD UNIFORM VAR
 
-    simpleTriangleShader.run();
-
-    //main program loop
     while(windowManager.isRunningWindow())
     {
         windowManager.processInput();
         //rendering
         glClear(GL_COLOR_BUFFER_BIT);
 
+        float timeValue = glfwGetTime();
+        float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+
+        simpleTriangleShader.setUniformVariable("ActualColor", greenValue);
         triangle.draw();
-        triangle2.draw();
 
-        glClearColor(0.2f, 0.3f, actualColor, 1.0f);
-        if (isUp)
-        {
-            actualColor += ratio;
-        }
-        else
-        {
-            actualColor -= ratio;
-        }
-
-        if (actualColor > 0.9f && isUp)
-        {
-            isUp = false;
-        }
-        else if (actualColor < 0.02f && isUp == false)
-        {
-            isUp = true;
-        }
         //rendering end
         windowManager.swapWindowBuffer();
         glfwPollEvents();
     }
 
-    return 0;
+    return true;
 }
