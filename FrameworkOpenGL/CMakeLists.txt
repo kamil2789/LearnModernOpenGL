@@ -27,6 +27,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     ${PROJECT_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/Externals/glfw/include
     ${CMAKE_SOURCE_DIR}/Externals/glad/include
+    ${CMAKE_SOURCE_DIR}/Externals/stbImage
 )
 
 add_custom_command(TARGET FrameworkOpenGL PRE_BUILD
