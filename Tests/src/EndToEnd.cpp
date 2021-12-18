@@ -11,3 +11,8 @@ TEST(EndToEnd, ColoredTriangle)
 {
     EXPECT_TRUE(EndToEndTest::ColoredTriangleTest());
 }
+
+TEST(EndToEnd, TexturedReactangle)
+{
+    EXPECT_TRUE(EndToEndTest::TexturedReactangleTest());
+}

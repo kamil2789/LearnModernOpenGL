@@ -11,6 +11,7 @@ add_executable(${PROJECT_NAME}
     src/GradientTriangleWithUniformTest.cpp
     src/ColoredTriangleTest.cpp
     src/EndToEnd.cpp
+    src/TextureReactangleTest.cpp
     #FrameworkOpenGL project
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ShaderFileReader.cpp
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GladConfig.cpp
@@ -19,6 +20,7 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GlfwWindowManager.cpp
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GlfwConfig.cpp
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ColoredTriangle.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/TexturedReactangle.cpp
     #External
     ${CMAKE_SOURCE_DIR}/Externals/glad/src/glad.c
 )
@@ -38,6 +40,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/include
     ${CMAKE_SOURCE_DIR}/Externals/glfw/include
     ${CMAKE_SOURCE_DIR}/Externals/glad/include
+    ${CMAKE_SOURCE_DIR}/Externals/stbImage
 )
 
 add_custom_command(TARGET Tests PRE_BUILD

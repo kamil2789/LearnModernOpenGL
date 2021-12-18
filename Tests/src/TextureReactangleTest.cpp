@@ -1,4 +1,5 @@
-#include <iostream>
+#include "EndToEndTests.h"
+
 #include <array>
 
 #include <glad/glad.h>
@@ -15,7 +16,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-int main()
+bool EndToEndTest::TexturedReactangleTest()
 {
     GlfwConfig glfwConfig{};
     glfwConfig.setDefaultWindowOptions();
@@ -49,7 +50,6 @@ int main()
     TexturedReactangle texturedReactangle{vertices, indices};
     texturedReactangle.init();
 
-/*
     int width, height, nrChannels;
 
     unsigned char *data = stbi_load("textures/container.jpg", &width, &height, &nrChannels, 0);
@@ -68,8 +68,6 @@ int main()
     stbi_image_free(data);
 
     glBindTexture(GL_TEXTURE_2D, texture);
-
-*/
     textureShader.run();
 
     //main program loop
@@ -85,5 +83,5 @@ int main()
         glfwPollEvents();
     }
 
-    return 0;
+    return true;
 }

@@ -2,8 +2,6 @@
 #include <array>
 #include "ISolidObject.h"
 
-/* Prototype, temporary class */
-
 class ColoredTriangle : public ISolidObject
 {
 public:
