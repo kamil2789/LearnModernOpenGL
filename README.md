@@ -27,6 +27,36 @@ $ mkdir build
 $ cd build
 ```
 
+### Linux build
+```
+cmake ..
+```
+
+### Troubleshooting
+```
+Could NOT find X11 (missing: X11_X11_INCLUDE_PATH X11_X11_LIB)
+Solution:
+sudo yum install libX11-devel
+```
+```
+No CMAKE_CXX_COMPILER could be found
+Solution:
+yum group install c-development
+```
+```
+Missing packages for GLFW:
+sudo yum install libXrandr-devel
+sudo yum install libXinerama-devel
+sudo yum install libXcursor-devel
+sudo yum install libXi-devel
+```
+```
+fatal error: GL/gl.h: No such file or directory
+Solution:
+sudo yum install mesa-libGL-devel 
+```
+
+
 ### Build with MSVC
 Currently, only MSCV build is supported.
 From build directory:
