@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include "GladConfig.h"
+#include "config/GladConfig.h"
 
 GladConfig::GladConfig()
 {

@@ -1,5 +1,5 @@
 #include <array>
-#include "Triangle.h"
+#include "entities/Triangle.h"
 
 #include <glad/glad.h>
 

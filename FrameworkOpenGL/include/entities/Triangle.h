@@ -1,8 +1,8 @@
 #pragma once
 #include <array>
-#include "ISolidObject.h"
+#include "Object.h"
 
-class Triangle : public ISolidObject
+class Triangle : public Object
 {
 public:
     Triangle(const std::array<float, 9>& vertices);

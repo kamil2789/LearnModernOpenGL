@@ -3,12 +3,12 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "GlfwConfig.h"
-#include "GlfwWindowManager.h"
-#include "GladConfig.h"
-#include "ShaderFileReader.h"
-#include "ShaderProgram.h"
-#include "ColoredTriangle.h"
+#include "config/GlfwConfig.h"
+#include "config/GlfwWindowManager.h"
+#include "config/GladConfig.h"
+#include "entities/ShaderFileReader.h"
+#include "entities/ShaderProgram.h"
+#include "entities/ColoredTriangle.h"
 
 bool EndToEndTest::ColoredTriangleTest()
 {

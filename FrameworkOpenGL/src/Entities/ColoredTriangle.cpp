@@ -1,5 +1,5 @@
 #include <array>
-#include "ColoredTriangle.h"
+#include "entities/ColoredTriangle.h"
 
 #include <glad/glad.h>
 

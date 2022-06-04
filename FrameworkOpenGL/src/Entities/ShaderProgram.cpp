@@ -1,6 +1,6 @@
 #include <string>
 #include <stdexcept>
-#include "ShaderProgram.h"
+#include "entities/ShaderProgram.h"
 
 #include <glad/glad.h>
 

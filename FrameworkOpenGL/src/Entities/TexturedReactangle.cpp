@@ -1,5 +1,5 @@
 #include <array>
-#include "TexturedReactangle.h"
+#include "entities/TexturedReactangle.h"
 
 #include <glad/glad.h>
 

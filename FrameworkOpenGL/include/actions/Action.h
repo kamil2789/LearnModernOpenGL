@@ -1,5 +1,6 @@
 #pragma once
 
+class Object;
 class Action
 {
 public:

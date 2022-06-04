@@ -1,9 +1,9 @@
 #pragma once
 
-class ISolidObject
+class Object
 {
 public:
-    virtual ~ISolidObject() = default;
+    virtual ~Object() = default;
     virtual void init() = 0;
     virtual void draw() = 0;
 };

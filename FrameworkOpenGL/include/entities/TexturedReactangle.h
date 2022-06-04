@@ -1,8 +1,8 @@
 #pragma once
 #include <array>
-#include "ISolidObject.h"
+#include "Object.h"
 
-class TexturedReactangle : public ISolidObject
+class TexturedReactangle : public Object
 {
 public:
     TexturedReactangle(const std::array<float, 32>& vertices, const std::array<unsigned int, 6>& indices);

@@ -1,6 +1,6 @@
 #include "EndToEndTests.h"
 
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 
 TEST(EndToEnd, GradientTriangleWithUniform)
 {

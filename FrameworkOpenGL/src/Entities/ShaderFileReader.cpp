@@ -2,7 +2,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <sstream>
-#include "ShaderFileReader.h"
+#include "entities/ShaderFileReader.h"
 
 const std::map<std::string, ShaderFileReader::ShaderType> ShaderFileReader::extensions {
         std::make_pair(".frag", ShaderType::Fragment),

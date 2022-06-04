@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <GLFW\glfw3.h>
 
-#include "GlfwConfig.h"
+#include "config/GlfwConfig.h"
 
 GlfwConfig::GlfwConfig()
 {

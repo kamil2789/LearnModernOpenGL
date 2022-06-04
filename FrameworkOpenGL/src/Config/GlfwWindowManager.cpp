@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include <GLFW/glfw3.h>
-#include "GlfwWindowManager.h"
+#include "config/GlfwWindowManager.h"
 
 GlfwWindowManager::GlfwWindowManager(unsigned short width, unsigned short height, std::string name):
     width(width),

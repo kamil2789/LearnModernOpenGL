@@ -1,9 +1,9 @@
 #include <fstream>
 #include <string>
 #include <filesystem>
-#include "ShaderFileReader.h"
+#include "entities/ShaderFileReader.h"
 
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 
 TEST(ShaderFileReader, readSrc_VertexShaderExists_ReturnValidData)
 {

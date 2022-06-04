@@ -5,7 +5,7 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-#include "TextureObject.h"
+#include "entities/TextureObject.h"
 
 TextureObject::TextureObject(const std::string& file):
     file(file)
