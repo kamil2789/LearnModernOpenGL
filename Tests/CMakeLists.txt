@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 
 project(Tests VERSION 1.0)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(${PROJECT_NAME} 
@@ -13,15 +13,15 @@ add_executable(${PROJECT_NAME}
     src/EndToEnd.cpp
     src/TextureReactangleTest.cpp
     #FrameworkOpenGL project
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ShaderFileReader.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GladConfig.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ShaderProgram.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Triangle.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GlfwWindowManager.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/GlfwConfig.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/ColoredTriangle.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/TexturedReactangle.cpp
-    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/TextureObject.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Entities/ShaderFileReader.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Config/GladConfig.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Entities/ShaderProgram.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Entities/Triangle.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Config/GlfwWindowManager.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Config/GlfwConfig.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Entities/ColoredTriangle.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Entities/TexturedReactangle.cpp
+    ${CMAKE_SOURCE_DIR}/FrameworkOpenGL/src/Entities/TextureObject.cpp
     #External
     ${CMAKE_SOURCE_DIR}/Externals/glad/src/glad.c
 )

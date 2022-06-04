@@ -60,11 +60,11 @@ void ShaderProgram::compile()
     glAttachShader(shaderProgramID, fragmentShader);
     glLinkProgram(shaderProgramID);
 
-    int success;
+    int success = 0;
     glGetProgramiv(shaderProgramID, GL_LINK_STATUS, &success);
     if (!success)
     {
-        char infoLog[512];
+        char infoLog[512] = {0};
         glGetShaderInfoLog(shaderProgramID, 512, nullptr, infoLog);
         throw std::runtime_error{"Shader program link error " + std::string{infoLog}};
     }
