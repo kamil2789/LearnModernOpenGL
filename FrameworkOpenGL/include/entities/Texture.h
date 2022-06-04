@@ -1,10 +1,11 @@
 #pragma once
+#include <string>
 
-class TextureObject
+class Texture
 {
 public:
-    TextureObject(const std::string& file);
-    ~TextureObject();
+    Texture(const std::string& file);
+    ~Texture();
     void setScalingOptions(unsigned int minFilter, unsigned int maxFilter) const;
 
     void init();

@@ -5,20 +5,20 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-#include "entities/TextureObject.h"
+#include "entities/Texture.h"
 
-TextureObject::TextureObject(const std::string& file):
+Texture::Texture(const std::string& file):
     file(file)
 {
     glGenTextures(1, &texture);
 }
 
-TextureObject::~TextureObject()
+Texture::~Texture()
 {
     glDeleteTextures(1, &texture);
 }
 
-void TextureObject::init()
+void Texture::init()
 {
     int width, height, nrChannels;
 
@@ -42,7 +42,7 @@ void TextureObject::init()
     stbi_image_free(data);
 }
 
-void TextureObject::bind()
+void Texture::bind()
 {
     glBindTexture(GL_TEXTURE_2D, texture);
 }

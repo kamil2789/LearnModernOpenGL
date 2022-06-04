@@ -12,7 +12,7 @@
 #include "entities/ShaderProgram.h"
 #include "entities/Triangle.h"
 #include "entities/TexturedReactangle.h"
-#include "entities/TextureObject.h"
+#include "entities/Texture.h"
 
 bool EndToEndTest::TexturedReactangleTest()
 {
@@ -48,7 +48,7 @@ bool EndToEndTest::TexturedReactangleTest()
     TexturedReactangle texturedReactangle{vertices, indices};
     texturedReactangle.init();
 
-    TextureObject textureCrate{"textures/container.jpg"};
+    Texture textureCrate{"textures/container.jpg"};
     textureCrate.init();
 
     //main program loop

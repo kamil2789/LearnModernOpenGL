@@ -7,14 +7,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(${PROJECT_NAME} 
     src/main.cpp
-    src/Config/GlfwConfig.cpp
-    src/Config/GlfwWindowManager.cpp
-    src/Config/GladConfig.cpp
-    src/Entities/ShaderFileReader.cpp
-    src/Entities/ShaderProgram.cpp
-    src/Entities/Triangle.cpp
-    src/Entities/ColoredTriangle.cpp
-    src/Entities/TexturedReactangle.cpp
+    src/config/GlfwConfig.cpp
+    src/config/GlfwWindowManager.cpp
+    src/config/GladConfig.cpp
+    src/entities/ShaderFileReader.cpp
+    src/entities/ShaderProgram.cpp
+    src/entities/Triangle.cpp
+    src/entities/ColoredTriangle.cpp
+    src/entities/TexturedReactangle.cpp
+    src/entities/Texture.cpp
     ${CMAKE_SOURCE_DIR}/Externals/glad/src/glad.c
 )
 
